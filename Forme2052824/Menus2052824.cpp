@@ -1,12 +1,14 @@
-// But : Afficher le premier menu
+// But : Afficher les Menus et les validers
 // Auteur : William Bergeron
 // Date : 2020-11-01
 
 #include "Menus2052824.h"
 #include <iostream>
+#include <string>
+#include "Lire2052824.h"
 using namespace std;
 
-int afficherMenu1(int menu1)
+void afficherMenu1()
 {
 	// Message de bienvenue et demande
     cout << "Bonjour et bienvenue sur le programme Formo-géo! Ce programme à comme but d'afficher des formes géométriques plein ou vide." << endl;
@@ -20,11 +22,10 @@ int afficherMenu1(int menu1)
 
 	/* cout << "Votre choix --> ";
 	cin >> menu1; */
-
-    return 0;
+	return;
 }
 
-int afficherMenu2(int menu2)
+void afficherMenu2()
 {
 	cout << "Veuillez entrer le chiffre corespondant à votre choix de remplissage: " << endl;
 
@@ -34,8 +35,7 @@ int afficherMenu2(int menu2)
 
 	/* cout << "Votre choix --> ";
 	cin >> menu2; */
-
-	return 0;
+	return;
 }
 
 int validerMenu(int choixMenu, int maxt)
@@ -46,33 +46,36 @@ int validerMenu(int choixMenu, int maxt)
 	switch (choixMenu)
 	{
 	case 1:
-		cout << afficherMenu1;
+		afficherMenu1();
 
 		cout << "Votre choix --> ";
-		cin >> choix;
+		choix = lireEntier();
 
-		 if (choix <= 0 || choix > maxt)
+		while (choix <= 0 || choix > maxt)
 		{
-			cout << "Erreur : Le carachtère entrer n'est pas valide. Veuillez en entrer un nouveau : ";
-			cin >> choix;
+			cout << "Erreur : Le chiffre choisi n'est pas compris entre 1 et " << maxt << endl;
+			cout << "Votre choix --> ";
+			choix = lireEntier();
 		}
 		break;
 
 	case 2:
-		cout << afficherMenu2;
+		afficherMenu2();
 
 		cout << "Votre choix --> ";
-		cin >> choix;
+		choix = lireEntier();
 
-		if (choix <= 0 || choix > maxt)
+		while (choix <= 0 || choix > maxt)
 		{
-			cout << "Erreur : Le carachtère entrer n'est pas valide. Veuillez en entrer un nouveau : ";
-			cin >> choix;
+			cout << "Erreur : Le chiffre choisi n'est pas compris entre 1 et " << maxt << endl;
+			cout << "Votre choix --> ";
+			choix = lireEntier();
 		}
 		break;
 
 	default:
 		cout << "Erreur de programme. Veuillez fermer le programme et réessayer.";
+		choix = 0;
 		break;
 	}
 

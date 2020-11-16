@@ -38,7 +38,7 @@ int main()
 		// Afficher le menu du remplissage et lire un choix valide
       choixRemplissage = validerMenu(2, RETOUR);
 
-		// Si l'utilisateur n'est pas revenu au menu principal
+	// Si l'utilisateur n'est pas revenu au menu principal
       if (choixRemplissage != RETOUR)
 	   {
 			// Ici, l'utilisateur a fait le choix d'une forme et du remplissage, il nous reste à traiter et dessiner la forme
@@ -59,7 +59,7 @@ int main()
 					traiterLosange (choixRemplissage);
 					break;
 			} // Fin du switch
-	   }// fin du if
+	   }// fin du if 
 	   
       // On présente de nouveau le menu principal des choix des formes et on lit le choix de l'utilisateur
 	   choixForme = validerMenu(1 /* Menu des formes */, QUITTER /* Nombres d'options au menu*/);
