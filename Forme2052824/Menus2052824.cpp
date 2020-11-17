@@ -1,7 +1,7 @@
 // But : Afficher les Menus et les validers
 // Auteur : William Bergeron
 // Date : 2020-11-01
-
+// Modif : 2020-11-15
 #include "Menus2052824.h"
 #include <iostream>
 #include <string>
@@ -20,8 +20,6 @@ void afficherMenu1()
 	cout << "4.		Losange" << endl;
 	cout << "5.		Quitter" << endl;
 
-	/* cout << "Votre choix --> ";
-	cin >> menu1; */
 	return;
 }
 
@@ -33,8 +31,6 @@ void afficherMenu2()
 	cout << "2.		Forme vide" << endl;
 	cout << "3.		Retour au menu précédent" << endl;
 
-	/* cout << "Votre choix --> ";
-	cin >> menu2; */
 	return;
 }
 
@@ -43,14 +39,17 @@ int validerMenu(int choixMenu, int maxt)
 	//Déclaration des variables
 	int choix;
 
+	// Switch variant du choixMenu du main pour alterer entre les deux menus
 	switch (choixMenu)
 	{
 	case 1:
-		afficherMenu1();
+		afficherMenu1(); // Aficher le premier menu
 
+		// Demande du choix de l'utilisateur
 		cout << "Votre choix --> ";
-		choix = lireEntier();
+		choix = lireEntier(); // Vérification si il n'y a pas de caractère qui ferait planter la console
 
+		// Boucle vérifiant la validiter du nombre
 		while (choix <= 0 || choix > maxt)
 		{
 			cout << "Erreur : Le chiffre choisi n'est pas compris entre 1 et " << maxt << endl;
@@ -60,11 +59,13 @@ int validerMenu(int choixMenu, int maxt)
 		break;
 
 	case 2:
-		afficherMenu2();
+		afficherMenu2(); // Afficher le deuxième menu
 
+		// Demande du choix de l'utilisateur
 		cout << "Votre choix --> ";
-		choix = lireEntier();
+		choix = lireEntier(); // Vérification si il n'y a pas de caractère qui ferait planter la console
 
+		// Boucle vérifiant la validiter du nombre
 		while (choix <= 0 || choix > maxt)
 		{
 			cout << "Erreur : Le chiffre choisi n'est pas compris entre 1 et " << maxt << endl;

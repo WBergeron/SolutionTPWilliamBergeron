@@ -1,4 +1,4 @@
-// But : 
+// But : Fonction affichant les menus et validant les choix de l'utilisateur.
 // Auteur : William Bergeron
 // Date : 2020-10-29
 
